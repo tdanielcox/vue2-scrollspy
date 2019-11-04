@@ -35,11 +35,19 @@ const install = (Vue, options) => {
   const activableElements = {}
   const currentIndex = {}
 
+  //  set menuTriggerOffset based on offset (for backwards compatibility)
+  const menuTriggerOffset = options
+    && typeof options === 'object'
+    && 'offset' in options
+      ? options.offset
+      : 0;
+
   options = Object.assign({
     allowNoActive: false,
     sectionSelector: null,
     data: null,
     offset: 0,
+    menuTriggerOffset: menuTriggerOffset,
     time: 500,
     steps: 30,
     easing: null,
@@ -153,7 +161,7 @@ const install = (Vue, options) => {
           index = idScrollSections.length
         } else {
           for (index = 0; index < idScrollSections.length; index++) {
-            if (getOffsetTop(idScrollSections[index], scrollEl) - options.offset > scrollEl.scrollTop) {
+            if (getOffsetTop(idScrollSections[index], scrollEl) - options.menuTriggerOffset > scrollEl.scrollTop) {
               break
             }
           }
