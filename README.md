@@ -73,13 +73,15 @@ section index.
 2. `v-scroll-spy="{allowNoActive: true}"`: allow no active sections when scroll position is outside of the scrollspy 
 container. Default behavior is too keep active at least one section in any case.
 
-3. `v-scroll-spy="{offset: 50}"`: add an offset for scroll and active events.
+3. `v-scroll-spy="{offset: 50}"`: add an offset for scroll events.
 
-4. `v-scroll-spy="{time: 200, steps: 30}"`: set the animation options.
+4. `v-scroll-spy="{menuTriggerOffset: 50}"`: offset to trigger the menu active class (defaults to offset if not provided).
 
-5. `$scrollTo(index: int)` is provided on scope Vue instance to invoke a scroll to the given section index.
+5. `v-scroll-spy="{time: 200, steps: 30}"`: set the animation options.
 
-6. `v-section-selector`: set section which should scrollto
+6. `$scrollTo(index: int)` is provided on scope Vue instance to invoke a scroll to the given section index.
+
+7. `v-section-selector`: set section which should scrollto
 
 ### **v-scroll-spy-active**
 
